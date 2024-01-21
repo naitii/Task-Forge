@@ -97,12 +97,14 @@ body::-webkit-scrollbar-thumb{
 .content{
     width: 90%;
     display: flex;
-    justify-content: center;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
 }
 #content-header{
     margin-top: 20px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     border-radius: 15px;
     width: 80%;
     font-weight: bold;
@@ -121,7 +123,7 @@ body::-webkit-scrollbar-thumb{
 form{
     display: grid;
     gap: 3px;
-    grid-row: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     place-items: center;
 }
@@ -146,4 +148,53 @@ form{
     background-color: rgb(255, 0, 0);
     color: white;
     position: absolute;
+}
+.mainTask{
+    height: 100%;
+    width: 70%;
+    padding: 5%;
+    text-align: center;
+    /* background-color: aqua; */
+}
+.addTaskForm{
+    padding: 20px;
+    background-color: var(--black);
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap:20px;
+}
+
+
+.notImportant{
+    color: white;
+    width: 25%;
+    height: 25px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(214, 183, 6);
+    font-size: 15px;
+}
+.addTaskBtn{
+    background-color: var(--green);
+    border: none;
+    color: white;
+    border-radius: 3px;
+    width: 100%;
+}
+.cancelTaskBtn{
+    border-radius: 3px;
+    background-color: rgb(254, 92, 92);
+    border: none;
+    color: white;
+    width: 30%;
+}
+
+.taskBox{
+    width: 100%;
+    border: 2px solid var(--green);
+    border-radius: 4px;
+    height: 40px;
+    align-items: center;
+    gap: 20px;
+    display: flex;
 }

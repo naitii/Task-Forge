@@ -1,12 +1,13 @@
 import { select_list } from "./script.js";
 import {addNewProjectToLocal} from "./projects.js";
 import { removeProjectfromLocal } from "./projects.js";
+import { addTaskFunctionality } from "./addTasks.js";
 
 const addProject = document.getElementById('add-project');
 const parent  = document.querySelector('.projects');
 
 var formDone = true;
-export var projectID = 0;
+export var projectID = 1;
 
 addProject.addEventListener('click',function(){
     if(formDone === true)
@@ -40,16 +41,20 @@ addProject.addEventListener('click',function(){
                 if(projectName.value.length){
 
                     formDone = true;
-                    projectID++;    
+
+                    projectID=projectID+1;
+                    console.log(projectID);
 
                     const container = document.createElement('div');
                     container.classList.add('projectContainer');
                     container.setAttribute('id',`${projectID}`);
+
                     container.style.display = 'flex';
                     container.style.gap = '150px';
 
 
                     container.classList.add('nav-sublist');
+                    container.classList.add('project-sublist');
                     container.addEventListener("click", select_list);
                     
                     container.innerText = `${projectName.value}`;
@@ -96,10 +101,11 @@ function addExistingProjects(){
                     container.classList.add('projectContainer');
                     container.style.display = 'flex';
                     container.style.gap = '150px';
-                    container.setAttribute('id',`${projectID}`);
+                    container.setAttribute('id',`${arr[i].projectID}`);
 
 
                     container.classList.add('nav-sublist');
+                    container.classList.add('project-sublist');
                     container.addEventListener("click", select_list);
 
 
@@ -108,7 +114,7 @@ function addExistingProjects(){
                     const trash = addTrash();
                     trash.addEventListener('click', function(){
                         trash.parentNode.parentNode.removeChild(trash.parentNode);
-                        var ID = parseInt(trash.parentNode.id)+1;
+                        var ID = parseInt(trash.parentNode.id);
                         console.log(ID);
                         removeProjectfromLocal(ID);
                     })
@@ -116,26 +122,14 @@ function addExistingProjects(){
 
     
             parent.appendChild(container);
-            projectID=arr[i].projectID;
         }
+        projectID=arr.length+1;
     }
 
     parent.appendChild(addProject);
 }
 
 window.addEventListener('load',addExistingProjects());
-
-function dropDown(event)
-{
-    event.preventDefault();
-    const deleteProject = document.createElement('div');
-    deleteProject.classList.add('delete');
-    deleteProject.textContent = 'Delete';
-    deleteProject.style.zIndex = '2';
-    deleteProject.style.left = (event.pageX - 25) + 'px'; 
-    deleteProject.style.top = (event.pageY - 25) + 'px';
-    document.body.appendChild(deleteProject);
-}
 
 document.body.addEventListener('click',resetDeleteNodes);
 document.body.addEventListener('contextMenu',resetDeleteNodes);
