@@ -44,10 +44,13 @@ bars.addEventListener('click', function(){
         sublist.addEventListener('click', select_list);
     }
     export function select_list(e){
-        const selected = document.querySelector('.selectedNav')
+        console.log(e.target.tagName)
+        if(e.target.tagName!='svg'&&e.target.tagName!='path'){
+            const selected = document.querySelector('.selectedNav')
             selected.classList.remove('selectedNav');
             e.target.classList.add('selectedNav');
             contentHeader.innerHTML=`${e.target.textContent}`;
+        }
     }
 
 

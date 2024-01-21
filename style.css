@@ -76,6 +76,7 @@ body::-webkit-scrollbar-thumb{
 .navbar{
     width: 16rem;
     height: 100vh;
+    min-height: fit-content;
     background-color: var(--black);
     transition: all 0.8s ease;
     
@@ -137,4 +138,12 @@ form{
     background-color: rgb(254, 92, 92);
     border: none;
     color: white;
+}
+.delete{
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    position: absolute;
 }

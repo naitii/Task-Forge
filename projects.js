@@ -12,6 +12,7 @@ const createProject = (Name) => {
     const taskNum = taskList.length;
     return{
         Name,
+        projectID,
         taskList,
         taskNum,
     };
@@ -23,10 +24,20 @@ export function addNewProjectToLocal(projectName){
         projectList.push(newProject);
         saveInLocal(); 
 }
+export function removeProjectfromLocal(ID) {
+    var storedProjects = localStorage.getItem("myProjectList");
 
+    if (storedProjects) {
+        var parsedData = JSON.parse(storedProjects);
+
+        parsedData = parsedData.filter(function (item) {
+            return item.projectID !== ID;
+        });
+
+        localStorage.setItem("myProjectList", JSON.stringify(parsedData));
+    }
+}
 function saveInLocal(){
     localStorage.setItem("myProjectList", JSON.stringify(projectList));
-    localStorage.setItem("current", (projectID).toString());
-
 }
 
