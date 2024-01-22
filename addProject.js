@@ -2,6 +2,8 @@ import { select_list } from "./script.js";
 import {addNewProjectToLocal} from "./projects.js";
 import { removeProjectfromLocal } from "./projects.js";
 import { addTaskFunctionality } from "./addTasks.js";
+import { removeProjectChild } from "./tasks.js";
+import { addExistingTasks } from "./addTasks.js";
 
 const addProject = document.getElementById('add-project');
 const parent  = document.querySelector('.projects');
@@ -65,6 +67,7 @@ addProject.addEventListener('click',function(){
                         var ID = parseInt(trash.parentNode.id);
                         console.log(ID);
                         removeProjectfromLocal(ID);
+                        removeProjectChild(ID);
                     })
                     
                     container.appendChild(trash);
@@ -117,10 +120,15 @@ function addExistingProjects(){
                         var ID = parseInt(trash.parentNode.id);
                         console.log(ID);
                         removeProjectfromLocal(ID);
+                        removeProjectChild(ID);
                     })
                     container.appendChild(trash);
 
-    
+                    
+            container.addEventListener('click',function(){
+                addExistingTasks(parseInt(container.id));
+            })
+
             parent.appendChild(container);
         }
         projectID=arr.length+1;
@@ -130,6 +138,11 @@ function addExistingProjects(){
 }
 
 window.addEventListener('load',addExistingProjects());
+
+
+
+
+
 
 document.body.addEventListener('click',resetDeleteNodes);
 document.body.addEventListener('contextMenu',resetDeleteNodes);
@@ -142,7 +155,7 @@ function resetDeleteNodes(){
     }
 }
 
-function addTrash(){
+export function addTrash(){
     var svgString = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0H284.2c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64S14.3 32 32 32h96l7.2-14.3zM32 128H416V448c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16V432c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg>';       
     var container = document.createElement('div');
     container.innerHTML = svgString;

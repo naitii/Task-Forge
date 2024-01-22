@@ -1,4 +1,5 @@
 import { addTaskFunctionality } from "./addTasks.js";
+
 const bars = document.getElementById("bars");
 const nav = document.querySelector('.navbar')
 const navChildHome = nav.querySelectorAll('nav-subList');
@@ -47,10 +48,10 @@ bars.addEventListener('click', function(){
     }
     export function select_list(e){
         mainBody.innerHTML='';
-        console.log(e.target.tagName)
         if(e.target.tagName!='svg'&&e.target.tagName!='path'){
             const selected = document.querySelector('.selectedNav')
-            selected.classList.remove('selectedNav');
+            if(selected)
+                selected.classList.remove('selectedNav');
             e.target.classList.add('selectedNav');
             contentHeader.innerHTML=`${e.target.textContent}`;
             addTaskFunctionality();

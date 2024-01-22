@@ -1,20 +1,15 @@
 import {projectID} from './addProject.js';
 
-
 let defaultProjectList=[];
-let projectList = localStorage.getItem("myProjectList");
+export let projectList = localStorage.getItem("myProjectList");
 
 projectList = JSON.parse(projectList || JSON.stringify(defaultProjectList));
 
 
 const createProject = (Name) => {
-    const taskList =[];
-    const taskNum = taskList.length;
     return{
         Name,
         projectID,
-        taskList,
-        taskNum,
     };
 }
 
@@ -24,6 +19,7 @@ export function addNewProjectToLocal(projectName){
         projectList.push(newProject);
         saveInLocal(); 
 }
+
 export function removeProjectfromLocal(ID) {
     var storedProjects = localStorage.getItem("myProjectList");
 
@@ -37,6 +33,10 @@ export function removeProjectfromLocal(ID) {
         localStorage.setItem("myProjectList", JSON.stringify(parsedData));
     }
 }
+
+
+
+
 function saveInLocal(){
     localStorage.setItem("myProjectList", JSON.stringify(projectList));
 }
