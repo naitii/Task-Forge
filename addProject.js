@@ -20,7 +20,10 @@ addProject.addEventListener('click',function(){
 
         const addProjectForm = document.createElement('form');
         addProject.classList.add('addProjectForm');
+
             const projectName = document.createElement('input');
+            projectName.placeholder = "Add New Project";
+            projectName.style.marginTop ="8px";
             projectName.classList.add('projectName');
             projectName.setAttribute('id',"projectName")
 

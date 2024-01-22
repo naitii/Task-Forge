@@ -1,5 +1,3 @@
-import { taskId  } from "./addTasks.js";
-
 let defaultTaskList=[];
 let taskList = localStorage.getItem("myTaskList");
 

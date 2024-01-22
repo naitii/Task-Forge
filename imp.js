@@ -1,4 +1,4 @@
-import {addNewTask} from './addTasks.js';
+import {addNewTask} from "./addTasks.js";
 
 const mainBody = document.querySelector('.mainTask');
 var imp = document.getElementById('imp');

@@ -60,16 +60,6 @@ function addPlus(){
 
 
 
-
-
-
-
-
-
-
-
-
-
 //creating task form
 function generateTaskForm(ID){
 
@@ -80,6 +70,7 @@ function generateTaskForm(ID){
     const title = document.createElement('span');
     title.innerText = `Title: `
     var taskName = document.createElement('input');
+    taskName.style.width = "80%";
     taskName.classList.add('taskName');
 
     const DueDate = document.createElement('span');
