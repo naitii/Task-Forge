@@ -11,27 +11,38 @@ var navOpen = true;
 
 
 bars.addEventListener('click', function(){
-    if(navOpen)
-    {
-        bars.style.rotate = `-180deg`;
-        for(const child of navChild)
-        {
-            child.style.visibility = "hidden"
+    if (navOpen && window.innerWidth > 1045) {
+      bars.style.rotate = `-180deg`;
+      for (const child of navChild) {
+        child.style.visibility = "hidden";
+      }
+      nav.style.width = "2px";
+      navOpen = false;
+    } else if (navOpen && window.innerWidth <= 1045) {
+      bars.style.rotate = `-90deg`;
+      for (const child of navChild) {
+        child.style.visibility = "hidden";
+      }
+      nav.style.height = "2px";
+      navOpen = false;
+    } else if (window.innerWidth <= 1045 && !navOpen) {
+      bars.style.rotate = `0deg`;
+      nav.style.height = "fit-content";
+      setTimeout(function () {
+        for (const child of navChild) {
+          child.style.visibility = "visible";
         }
-        nav.style.width = "2px";
-        navOpen = false;
-    }
-    else
-    {
-        bars.style.rotate = `0deg`;
-        nav.style.width = "15rem";
-        setTimeout(function(){
-            for(const child of navChild)
-            {
-                child.style.visibility = "visible"
-            }
-        }, 500)
-        navOpen = true;
+      }, 500);
+      navOpen = true;
+    } else {
+      bars.style.rotate = `0deg`;
+      nav.style.width = "15rem";
+      setTimeout(function () {
+        for (const child of navChild) {
+          child.style.visibility = "visible";
+        }
+      }, 500);
+      navOpen = true;
     }
     
 })
@@ -58,4 +69,7 @@ bars.addEventListener('click', function(){
         }
     }
 
-
+    if(window.innerWidth>1045)
+    {
+        nav.style.height='100vh';
+    }

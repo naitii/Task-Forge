@@ -76,7 +76,7 @@ body::-webkit-scrollbar-thumb{
 .navbar{
     width: 16rem;
     /* min-width: fit-content; */
-    height: 100vh;
+    /* height: 100vh; */
     min-height: fit-content;
     background-color: var(--black);
     transition: all 0.8s ease;
@@ -93,10 +93,10 @@ body::-webkit-scrollbar-thumb{
 
 .mainBody{
     display: flex;
-    
+    flex-wrap: wrap;
 }
 .content{
-    width: 90%;
+    /* min-width: fit-content; */
     display: flex;
     gap: 30px;
     flex-direction: column;
@@ -160,6 +160,8 @@ button{
 .mainTask{
     height: 100%;
     width: 70%;
+    margin-left: 50px;
+    min-width: fit-content;
     padding: 5%;
     padding-top: 0px;
     text-align: center;
@@ -201,6 +203,7 @@ button{
 
 .taskBox{
     width: 100%;
+    min-width: fit-content;
     border: 2px solid var(--green);
     border-radius: 4px;
     height: 40px;
@@ -208,6 +211,21 @@ button{
     gap: 40px;
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1045px) {
+  .navbar {
+    width: 100vw;
+    min-height: fit-content;
+  }
+  .content{
+    width: 100vw;
+  }
+  .taskBox{
+    height: 120px;
+    align-content: center;
+  }
 }
 .Duedate{
     border: 1px solid white;
@@ -219,7 +237,7 @@ button{
     
 }
 .star{
-    width: 50px;
+    width: 100px;
 }
 .addtaskName{
     width: 200px;
