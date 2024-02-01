@@ -96,7 +96,8 @@ body::-webkit-scrollbar-thumb{
     flex-wrap: wrap;
 }
 .content{
-    /* min-width: fit-content; */
+    width: 60%;
+    min-width: fit-content;
     display: flex;
     gap: 30px;
     flex-direction: column;
