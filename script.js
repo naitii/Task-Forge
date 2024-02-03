@@ -11,6 +11,8 @@ var navOpen = true;
 
 
 bars.addEventListener('click', function(){
+    
+    nav.style.transition = `all 0.8s ease`;
     if (navOpen && window.innerWidth > 1045) {
       bars.style.rotate = `-180deg`;
       for (const child of navChild) {
@@ -18,7 +20,8 @@ bars.addEventListener('click', function(){
       }
       nav.style.width = "2px";
       navOpen = false;
-    } else if (navOpen && window.innerWidth <= 1045) {
+    }
+    else if (navOpen && window.innerWidth <= 1045) {
       bars.style.rotate = `-90deg`;
       for (const child of navChild) {
         child.style.visibility = "hidden";
