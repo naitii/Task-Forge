@@ -1,218 +1,217 @@
-:root{
-    --green: rgb(31,141,77);
-    --grey: rgb(25,39,52);
-    --light-grey:rgb(32, 49, 66);
-    --black: rgb(21,32,43);
-    font-size: 20px;
-    color: white;
-    font-family: sans-serif;
+:root {
+  --green: rgb(31, 141, 77);
+  --grey: rgb(25, 39, 52);
+  --light-grey: rgb(32, 49, 66);
+  --black: rgb(21, 32, 43);
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
 }
-body{
-    margin: 0%;
-    background-color: var(--grey);
+body {
+  margin: 0%;
+  background-color: var(--grey);
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-.nav-sublist{
-    height: 35px;
-    margin-top: 4px;
-    padding-left: 15px;
-    padding-top: 10px;
-    transition: all 0.2s ease-in;
+.nav-sublist {
+  height: 35px;
+  margin-top: 4px;
+  padding-left: 15px;
+  padding-top: 10px;
+  transition: all 0.2s ease-in;
 }
-.nav-sublist:hover{
-    cursor: pointer;
-    /* background-color: var(--light-grey); */
+.nav-sublist:hover {
+  cursor: pointer;
+  /* background-color: var(--light-grey); */
 }
-svg, img{
-    margin-right: 20px;
-    height: 20px;
-    width: 20px;
-    flex:1;
-}
-
-h2{
-    margin-top: 0px;
-    margin-left: 7%;
-    margin-right: 7%;
-    padding-top: 20px ;
-    font-size: 24px;
-    border-bottom: 1px ridge white;
+svg,
+img {
+  margin-right: 20px;
+  height: 20px;
+  width: 20px;
+  flex: 1;
 }
 
-
-.nav-list{
-    margin-left: 3px;
-    padding-left: 20px;
-}
-body::-webkit-scrollbar{
-    width: 8px;
-}
-body::-webkit-scrollbar-track{
-    background: var(--grey);
-}
-body::-webkit-scrollbar-thumb{
-    background-color: white;
-    border-radius: 20px;
-}
-#bars{
-    height: 30px;
-    width: 30px;
-    padding-top: 10px;
-    padding-left: 3vh;
-    transition: all 0.8s ease;
-}
-.header{
-    /* position: fixed; */
-    display: grid;
-    align-items: center;
-    grid-template-columns: 0.8fr 1fr;
-    padding-left: 3vw;
-    background-color: var(--light-grey);
-    height: 90px;
-    border-bottom: 2px solid var(--green);
-}
-.navbar{
-    width: 16rem;
-    /* min-width: fit-content; */
-    /* height: 100vh; */
-    min-height: fit-content;
-    background-color: var(--black);
-    transition: all 0.8s ease;
-    
-}
-.headForge{
-    color: rgb(9, 185, 0);
+h2 {
+  margin-top: 0px;
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-top: 20px;
+  font-size: 24px;
+  border-bottom: 1px ridge white;
 }
 
-.selectedNav{
-    background-color: var(--green);
-    border-left: 3px solid rgb(5, 236, 5);
+.nav-list {
+  margin-left: 3px;
+  padding-left: 20px;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--grey);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+}
+#bars {
+  height: 30px;
+  width: 30px;
+  padding-top: 10px;
+  padding-left: 3vh;
+  transition: all 0.8s ease;
+}
+.header {
+  /* position: fixed; */
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.8fr 1fr;
+  padding-left: 3vw;
+  background-color: var(--light-grey);
+  height: 90px;
+  border-bottom: 2px solid var(--green);
+}
+.navbar {
+  width: 16rem;
+  min-height: fit-content;
+  background-color: var(--black);
+  transition: all 0.8s ease;
+}
+.headForge {
+  color: rgb(9, 185, 0);
 }
 
-.mainBody{
-    display: flex;
-    flex-wrap: wrap;
-}
-.content{
-    width: 60%;
-    min-width: fit-content;
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    align-items: center;
-}
-#content-header{
-    margin-top: 20px;
-    text-align: center;
-    padding-top: 20px;
-    border-radius: 15px;
-    width: 80%;
-    font-weight: bold;
-    min-width: fit-content;
-    font-size: 30px;
-    background-color: var(--green);
-    height: 70px;
-}
-.add-project{
-    margin-top: 5px;
-    transition: all 0.2s ease;
-}
-.add-project:hover{
-    opacity: 0.7;
-}
-form{
-    display: grid;
-    min-width: fit-content;
-    gap: 3px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-}
-.projectName{
-    width: 90%;
-    grid-column: 1/3;
-}
-button{
-    min-height: fit-content;
-    min-width: fit-content;
-    height: 25px;
-    border-radius: 5px;
-}
-.add{
-    background-color: var(--green);
-    border: none;
-    color: white;
-}
-.cancel{
-    background-color: rgb(254, 92, 92);
-    border: none;
-    color: white;
-}
-.delete{
-    height: 30px;
-    width: 60px;
-    border-radius: 5px;
-    background-color: rgb(255, 0, 0);
-    color: white;
-    position: absolute;
-}
-.mainTask{
-    height: 100%;
-    width: 70%;
-    margin-left: 50px;
-    min-width: fit-content;
-    padding: 5%;
-    padding-top: 0px;
-    text-align: center;
-    /* background-color: aqua; */
-}
-.addTaskForm{
-    padding: 20px;
-    background-color: var(--black);
-    display: grid;
-    grid-template-columns: 0.3fr 1fr;
-    gap:20px;
-    margin-top: 20px;
+.selectedNav {
+  background-color: var(--green);
+  border-left: 3px solid rgb(5, 236, 5);
 }
 
+.mainBody {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  gap: 93px;
+  justify-content: flex-start;
+}
+.content {
+  width: 60vw;
+  /* min-width: fit-content; */
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: center;
+}
+#content-header {
+  margin-top: 20px;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 15px;
+  width: 80%;
+  font-weight: bold;
+  min-width: fit-content;
+  font-size: 30px;
+  background-color: var(--green);
+  height: 70px;
+}
+.add-project {
+  margin-top: 5px;
+  transition: all 0.2s ease;
+}
+.add-project:hover {
+  opacity: 0.7;
+}
+form {
+  display: grid;
+  min-width: fit-content;
+  gap: 3px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+.projectName {
+  width: 90%;
+  grid-column: 1/3;
+}
+button {
+  min-height: fit-content;
+  min-width: fit-content;
+  height: 25px;
+  border-radius: 5px;
+}
+.add {
+  background-color: var(--green);
+  border: none;
+  color: white;
+}
+.cancel {
+  background-color: rgb(254, 92, 92);
+  border: none;
+  color: white;
+}
+.delete {
+  height: 30px;
+  width: 60px;
+  border-radius: 5px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  position: absolute;
+}
+.mainTask {
+  height: 100%;
+  width: 70%;
+  margin-left: 50px;
+  min-width: fit-content;
+  padding: 5%;
+  padding-top: 0px;
+  text-align: center;
+  /* background-color: aqua; */
+}
+.addTaskForm {
+  padding: 20px;
+  background-color: var(--black);
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
 
-.notImportant{
-    color: white;
-    width: 25%;
-    height: 25px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(214, 183, 6);
-    font-size: 15px;
+.notImportant {
+  color: white;
+  width: 25%;
+  height: 25px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(214, 183, 6);
+  font-size: 15px;
 }
-.addTaskBtn{
-    background-color: var(--green);
-    border: none;
-    color: white;
-    border-radius: 3px;
-    width: 100%;
+.addTaskBtn {
+  background-color: var(--green);
+  border: none;
+  color: white;
+  border-radius: 3px;
+  width: 100%;
 }
-.cancelTaskBtn{
-    border-radius: 3px;
-    background-color: rgb(254, 92, 92);
-    border: none;
-    color: white;
-    width: 30%;
+.cancelTaskBtn {
+  border-radius: 3px;
+  background-color: rgb(254, 92, 92);
+  border: none;
+  color: white;
+  width: 30%;
 }
 
-.taskBox{
-    width: 100%;
-    min-width: fit-content;
-    border: 2px solid var(--green);
-    border-radius: 4px;
-    height: 40px;
-    align-items: center;
-    gap: 40px;
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
+.taskBox {
+  width: 100%;
+  min-width: fit-content;
+  border: 2px solid var(--green);
+  border-radius: 4px;
+  height: 40px;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 1045px) {
@@ -220,29 +219,28 @@ button{
     width: 100vw;
     min-height: fit-content;
   }
-  .content{
+  .content {
     width: 100vw;
   }
-  .taskBox{
+  .taskBox {
     height: 120px;
     align-content: center;
   }
 }
-.Duedate{
-    border: 1px solid white;
-    padding: 2px;
-    margin: 2px;
-    border-radius: 4px;
-    width: 120px;
-    min-width: fit-content;
-    
+.Duedate {
+  border: 1px solid white;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 4px;
+  width: 120px;
+  min-width: fit-content;
 }
-.star{
-    width: 100px;
+.star {
+  width: 100px;
 }
-.addtaskName{
-    width: 200px;
+.addtaskName {
+  width: 200px;
 }
-.addTask{
-    margin-top: 30px;
+.addTask {
+  margin-top: 30px;
 }
