@@ -237,6 +237,7 @@ button {
 }
 .star {
   width: 100px;
+  margin: 0%;
 }
 .addtaskName {
   width: 200px;
